@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import "./card.scss";
 
+/* links.mission_patch_small || */
+
 export const SpaceXCard = ({ mission_name, mission_id, launch_year, launch_success, launch_landing, links, index }) => {
     return (
         <>
@@ -10,10 +12,7 @@ export const SpaceXCard = ({ mission_name, mission_id, launch_year, launch_succe
                 {links.mission_patch && (
                     <img
                         className="card__image"
-                        src={
-                            /* links.mission_patch_small || */
-                            "https://cdn.pocket-lint.com/r/s/1200x/assets/images/142413-apps-feature-art-and-science-collide-the-best-in-modern-space-art-image1-iha6vzu3wk.jpg"
-                        }
+                        src="https://cdn.pocket-lint.com/r/s/1200x/assets/images/142413-apps-feature-art-and-science-collide-the-best-in-modern-space-art-image1-iha6vzu3wk.jpg"
                     />
                 )}
             </div>
