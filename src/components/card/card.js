@@ -7,7 +7,12 @@ export const SpaceXCard = ({ mission_name, mission_id, launch_year, launch_succe
     return (
         <>
             <div className="card__image-container">
-                {links.mission_patch && <img className="card__image" src={links.mission_patch_small} />}
+                {links.mission_patch && (
+                    <img
+                        className="card__image"
+                        src={links.mission_patch_small || process.env.PUBLIC_URL + "/img/fallback.png"}
+                    />
+                )}
             </div>
             {mission_name && <div className="card__name--blue">{`${mission_name} #${index}`}</div>}
             {mission_id && mission_id.length ? (
