@@ -10,7 +10,10 @@ export const SpaceXCard = ({ mission_name, mission_id, launch_year, launch_succe
                 {links.mission_patch && (
                     <img
                         className="card__image"
-                        src={links.mission_patch_small || process.env.PUBLIC_URL + "/img/fallback.png"}
+                        src={
+                            links.mission_patch_small ||
+                            "https://cdn.pocket-lint.com/r/s/1200x/assets/images/142413-apps-feature-art-and-science-collide-the-best-in-modern-space-art-image1-iha6vzu3wk.jpg"
+                        }
                     />
                 )}
             </div>
