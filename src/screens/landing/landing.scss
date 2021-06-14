@@ -24,19 +24,23 @@
             justify-content: center;
             flex-direction: column;
         }
+
         &__buttons {
             display: flex;
             justify-content: center;
             flex-direction: row;
             flex-wrap: wrap;
+
             // Years
-            & > * {
-                flex-basis: calc(50% - $margin-to-be-deducted);
+            &>* {
+                flex-basis: calc(50%-#{$margin-to-be-deducted});
             }
-            > *:last-child {
+
+            >*:last-child {
                 margin-right: 0;
             }
         }
+
         &__labels {
             align-self: center;
             font-size: 1.5rem;
@@ -45,12 +49,14 @@
     }
 
     .space-x-data {
-        & > * {
+        &>* {
             transition: all 0.2s ease-in-out;
+
             &:hover {
                 transform: scale(1.1);
             }
         }
+
         > :last-child {
             margin-right: 0;
         }
@@ -61,18 +67,21 @@
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
+
         // width: 100vw;
         // Filter and Data
         .filter {
             flex-basis: 20%;
         }
+
         .space-x-data {
             flex-basis: 80%;
             display: flex;
             flex-flow: row wrap;
+
             // Data Cards
-            & > * {
-                flex-basis: calc(12.5% - $margin-to-be-deducted);
+            &>* {
+                flex-basis: calc(12.5%-#{$margin-to-be-deducted});
             }
         }
     }
@@ -80,18 +89,21 @@
     @include respond(desktop) {
         flex-direction: row;
         align-items: flex-start;
+
         // width: 90rem;
         // Filter and Data
         .filter {
             flex-basis: 20%;
         }
+
         .space-x-data {
             flex-basis: 80%;
             display: flex;
             flex-flow: row wrap;
+
             // Data Cards
-            & > * {
-                flex-basis: calc(25% - $margin-to-be-deducted);
+            &>* {
+                flex-basis: calc(25%-#{$margin-to-be-deducted});
             }
         }
     }
@@ -99,18 +111,21 @@
     @include respond(tablet) {
         flex-direction: row;
         align-items: flex-start;
+
         // width: 90rem;
         // Filter and Data
         .filter {
             flex-basis: 20%;
         }
+
         .space-x-data {
             flex-basis: 80%;
             display: flex;
             flex-flow: row wrap;
+
             // Data Cards
-            & > * {
-                flex-basis: calc(50% - $margin-to-be-deducted);
+            &>* {
+                flex-basis: calc(50%-#{$margin-to-be-deducted});
             }
         }
     }
