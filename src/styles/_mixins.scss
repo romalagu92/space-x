@@ -1,0 +1,56 @@
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* 
+    Desktop First approach
+    So, media queries for mobile 
+    Max width 600px: 
+    rules will apply till 600px
+
+    media queries doesn't work well rem
+    so width is in em
+    em will always be equal to immediate font size
+    600px/16px font = 37.5em
+
+    above 1200px up to 1800 default will apply
+*/
+
+// Mobile first
+@mixin respond($device) {
+    @if $device == tablet {
+        // This applies from 700px onwards
+        @media (min-width: 43.8125em) and (max-width: 64em) {
+            @content;
+        }
+    }
+
+    @if $device == desktop {
+        // 701 and 1024
+        @media (min-width: 64.0625em) and (max-width: 90em) {
+            @content;
+        }
+    }
+
+    @if $device == big-desk {
+        // above 1440px
+        @media (min-width: 90.0625em) {
+            @content;
+        }
+    }
+}
+
+@function em($width) {
+    @return $width / 16px;
+}

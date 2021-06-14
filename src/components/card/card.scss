@@ -1,0 +1,46 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 25rem;
+    height: 35rem;
+    border: 1px solid $color-white;
+    padding: 0.5rem;
+    margin: $margin-to-be-deducted;
+    background-color: $color-white;
+    cursor: pointer;
+
+    /* SECTIONS */
+    // If not content image will not appear
+    &__image-container {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-light-grey;
+        margin-bottom: 1rem;
+    }
+
+    &__image {
+        width: 20rem;
+        height: 20rem;
+        object-fit: cover;
+    }
+
+    &__name--blue {
+        color: $color-blue-navy;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    &__label {
+        span {
+            color: $color-black;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+}

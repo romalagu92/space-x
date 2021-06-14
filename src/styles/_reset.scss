@@ -1,0 +1,80 @@
+@import "./variables";
+@import "./mixins";
+
+/* Reset default behavior of elements for all browsers */
+/*
+  Borders and Padding are not added to height and width of elements :
+  Computed Height = (height assigned)px - (padding-top + border-top + padding-bottom + border-bottom)px
+
+  1rem = 10px -->  root font size
+
+************************************ ****IMP*** --> Font and rem *************************************************************
+Everything depends on font size. Just declare font size in px
+write your css completely in rem
+rem refers to --> root font
+so now padding and margin are calculated wrt to font rem
+
+declare font size in px is also a bad practice because,
+user changed font size will not impact our website
+Y is what percent of X
+10                   16px(default browser)
+*/
+/* h1 font size needs to be reset as heading tags have default font size
+all em calculation's go wrong for heading tags */
+/* Box-sizing is not inherited
+   All elements and pseudo elements
+*/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/*
+   ***** "Order Matters: Last media query encountered will be executed for
+    conflicting rule, so for max-width less width rule at the end" ****
+    if, up to 900px and up to 1200px two rules then always 1200px will get executed
+*/
+html {
+    // above 1200px up to 1800 this will apply
+    font-size: 62.5%; // 1rem = 10px --> 10px/16px(browser default)
+
+    @include respond(desktop) {
+        font-size: 56.25%; // 9px
+    }
+
+    @include respond(tablet) {
+        font-size: 50%; // 1rem = 8px --> 8px/16px(browser default)
+    }
+
+    @include respond(big-desk) {
+        font-size: 75%; //12px
+    }
+}
+
+/*  line-height:1.7, 1.7 times bigger than predefined line height*/
+body {
+    padding: 3rem;
+    color: $color-text;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    box-sizing: border-box;
+
+    @include respond(tab-port) {
+        padding: 0;
+    }
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+/*  */
+image {
+    max-width: 100%;
+    height: auto;
+}
