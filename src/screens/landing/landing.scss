@@ -12,12 +12,12 @@
     // background-color: $color-grey-variant;
     background-color: $color-light-grey;
     margin: 0 auto;
-    padding: 1rem 0 1rem 0;
+    padding: 2rem 1rem;
 
     // css variables for calc function
+    --margin-to-be-deducted-left-plus-right: 1rem;
+    --margin-all-side: 0.5rem;
 
-    --margin-to-be-deducted: 1rem;
-    --margin-to-be-deducted-desktop: 0.5rem;
 
     // Filter Block
     .filter {
@@ -40,7 +40,7 @@
 
             // Years
             &>* {
-                flex-basis: calc(50% - var(--margin-to-be-deducted));
+                flex-basis: calc(50% - var(--margin-to-be-deducted-left-plus-right));
             }
 
             >*:last-child {
@@ -58,6 +58,7 @@
     .space-x-data {
         &>* {
             transition: all 0.2s ease-in-out;
+            margin: var(--margin-all-side);
 
             &:hover {
                 transform: scale(1.1);
@@ -88,7 +89,7 @@
 
             // Data Cards
             &>* {
-                //flex-basis: calc(12.5% - #{$margin-to-be-deducted});
+                flex-basis: calc(12.5% - var(--margin-to-be-deducted-left-plus-right));
             }
         }
     }
@@ -110,8 +111,7 @@
 
             // Data Cards
             &>* {
-                // margin: var(--margin-to-be-deducted-desktop);
-                //flex-basis: calc(25% - var(--margin-to-be-deducted-desktop));
+                flex-basis: calc(25% - var(--margin-to-be-deducted-left-plus-right));
             }
         }
     }
@@ -133,7 +133,7 @@
 
             // Data Cards
             &>* {
-                //flex-basis: calc(50% - #{$margin-to-be-deducted});
+                flex-basis: calc(50% - var(--margin-to-be-deducted-left-plus-right));
             }
         }
     }
