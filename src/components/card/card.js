@@ -3,18 +3,11 @@ import PropTypes from "prop-types";
 import cx from "classnames";
 import "./card.scss";
 
-/* links.mission_patch_small || */
-
 export const SpaceXCard = ({ mission_name, mission_id, launch_year, launch_success, launch_landing, links, index }) => {
     return (
         <>
             <div className="card__image-container">
-                {links.mission_patch && (
-                    <img
-                        className="card__image"
-                        src="https://cdn.pocket-lint.com/r/s/1200x/assets/images/142413-apps-feature-art-and-science-collide-the-best-in-modern-space-art-image1-iha6vzu3wk.jpg"
-                    />
-                )}
+                {links.mission_patch && <img className="card__image" src={links.mission_patch_small} />}
             </div>
             {mission_name && <div className="card__name--blue">{`${mission_name} #${index}`}</div>}
             {mission_id && mission_id.length ? (

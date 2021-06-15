@@ -9,15 +9,21 @@
     // max-width: em(700px);
     max-width: 100vw;
     // height: 100vh;
+    // background-color: $color-grey-variant;
     background-color: $color-light-grey;
     margin: 0 auto;
     padding: 1rem 0 1rem 0;
+
+    // css variables for calc function
+
+    --margin-to-be-deducted: 1rem;
+    --margin-to-be-deducted-desktop: 0.5rem;
 
     // Filter Block
     .filter {
         width: 25rem;
         height: 55rem;
-        overflow: scroll;
+        overflow: hidden;
 
         &__blocks {
             display: flex;
@@ -30,10 +36,11 @@
             justify-content: center;
             flex-direction: row;
             flex-wrap: wrap;
+            text-align: center;
 
             // Years
             &>* {
-                flex-basis: calc(50%-#{$margin-to-be-deducted});
+                flex-basis: calc(50% - var(--margin-to-be-deducted));
             }
 
             >*:last-child {
@@ -81,7 +88,7 @@
 
             // Data Cards
             &>* {
-                flex-basis: calc(12.5%-#{$margin-to-be-deducted});
+                //flex-basis: calc(12.5% - #{$margin-to-be-deducted});
             }
         }
     }
@@ -103,7 +110,8 @@
 
             // Data Cards
             &>* {
-                flex-basis: calc(25%-#{$margin-to-be-deducted});
+                // margin: var(--margin-to-be-deducted-desktop);
+                //flex-basis: calc(25% - var(--margin-to-be-deducted-desktop));
             }
         }
     }
@@ -125,7 +133,7 @@
 
             // Data Cards
             &>* {
-                flex-basis: calc(50%-#{$margin-to-be-deducted});
+                //flex-basis: calc(50% - #{$margin-to-be-deducted});
             }
         }
     }

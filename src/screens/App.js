@@ -4,14 +4,31 @@ import { LIMIT } from "../constants/app";
 import Landing from "./landing/Landing";
 import "../styles/_reset.scss";
 import "../styles/_typography.scss";
+import "./app.scss";
 
 const App = () => (
-    <Router>
-        <Switch>
-            <Route exact path="/" render={() => <Redirect to={`/launches?limit=${LIMIT}`} />} />
-            <Route path="/launches" component={Landing} />
-        </Switch>
-    </Router>
+    <>
+        <Header />
+        <Router>
+            <Switch>
+                <Route exact path="/" render={() => <Redirect to={`/launches?limit=${LIMIT}`} />} />
+                <Route path="/launches" component={Landing} />
+            </Switch>
+            <Footer />
+        </Router>
+    </>
 );
 
 export default App;
+
+const Header = () => {
+    return (
+        <header className="header">
+            <h1>SpaceX Launch Programs</h1>
+        </header>
+    );
+};
+
+const Footer = () => {
+    return <footer className="footer">Developed By:Roma</footer>;
+};
