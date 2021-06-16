@@ -138,3 +138,15 @@
         }
     }
 }
+
+.loading {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(1, 1, 1, 0.1);
+    z-index: 100;
+
+    span {
+        @include absCenter;
+        font-size: 2rem;
+    }
+}

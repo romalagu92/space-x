@@ -43,3 +43,11 @@ Button.propTypes = {
 };
 
 export default Button;
+
+// <Button className="btn btn-green" />
+// <button className="default"> {text} </button>
+// props --> className.split(" ") --> ["", ""]
+// <button className={cx("default",...classNAmeSplit)}> {text} </button>
+// cx <-- "","","" --> ""
+// cx <-- active --> cx({red:!active})
+//  { [`btn--${color || `white`}`]: true } --> btn--green or btn--white:true

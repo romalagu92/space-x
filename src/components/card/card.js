@@ -29,9 +29,9 @@ export const SpaceXCard = ({ mission_name, mission_id, launch_year, launch_succe
             <div className="card__label">
                 <span>Successful Launch:</span> {`${launch_success}`}
             </div>
-            {launch_landing && (
+            {typeof launch_landing !== "undefined" && (
                 <div className="card__label">
-                    <span>Successful Landing:</span> {launch_landing}
+                    <span>Successful Landing:</span> {`${launch_landing}`}
                 </div>
             )}
         </>
